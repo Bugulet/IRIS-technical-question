@@ -26,8 +26,12 @@ export default function MainApplicationPage() {
     return <div >
         <Menubar model={items} start={start} />
 
-        <div className="content">
-            {firstComponentActive ? <StringToNumberComponent /> : <NumberToStringComponent />}
+        <div className="content card grid">
+            <div className="col" />
+            <div className="col" >
+                {firstComponentActive ? <StringToNumberComponent /> : <NumberToStringComponent />}
+            </div>
+            <div className="col" />
         </div>
     </div>;
 }
