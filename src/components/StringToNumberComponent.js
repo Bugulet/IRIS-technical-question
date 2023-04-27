@@ -1,3 +1,5 @@
+import ConvertStringToNumber from "../controllers/StringToNumberController";
+
 export default function StringToNumberComponent(props){
-    return <>huh</>
+    return <>{ConvertStringToNumber("ABCD")}</>
 }
