@@ -1,24 +1,33 @@
+import "../pages/MainApplicationPage.css"
 import { TabView, TabPanel } from "primereact/tabview";
 import NumberToStringComponent from "../components/NumberToStringComponent";
 import StringToNumberComponent from "../components/StringToNumberComponent";
-export default function MainApplicationPage() {
-    return <div>
-        <TabView>
-            <TabPanel header="Header I">
-                <StringToNumberComponent />
-            </TabPanel>
+import { Menubar } from 'primereact/menubar';
+import { useState } from "react";
 
-            <TabPanel header="Header II">
-                <NumberToStringComponent/>
-            </TabPanel>
-            <TabPanel header="Header III">
-                <p className="m-0">
-                    At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti
-                    quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in
-                    culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
-                    Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-                </p>
-            </TabPanel>
-        </TabView>
+export default function MainApplicationPage() {
+    const [firstComponentActive, setFirstComponentActive] = useState(true);
+
+    const items = [
+        {
+            label: 'String to number',
+            icon: 'pi pi-fw pi-file',
+            command: () => { setFirstComponentActive(true); }
+        },
+        {
+            label: 'Number to string',
+            icon: 'pi pi-fw pi-pencil',
+            command: () => { setFirstComponentActive(false); }
+        }
+    ];
+
+    const start = <img alt="logo" src="https://www.iris.co.uk/wp-content/uploads/2021/05/IRIS-logo-190x60.png" height="40" className="mr-2"></img>;
+
+    return <div >
+        <Menubar model={items} start={start} />
+
+        <div className="content">
+            {firstComponentActive ? <StringToNumberComponent /> : <NumberToStringComponent />}
+        </div>
     </div>;
 }
