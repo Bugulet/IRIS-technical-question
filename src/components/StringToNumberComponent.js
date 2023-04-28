@@ -24,7 +24,7 @@ export default function StringToNumberComponent(props) {
             {/* <Button label="Submit" className="col-5 m-3" onClick={() => { setResult("asdf") }} /> */}
             {result != "" &&
                 < Card title="Result">
-                    <p className="m-3">
+                    <p className="m-3 text-4xl text-primary" style={{whiteSpace:"pre-wrap"}}>
                         {result}
                     </p>
                 </Card>

@@ -5,11 +5,14 @@ export default function ConvertStringToNumber(inputString) {
         return null;
     }
     let inputCopy = inputString.toUpperCase();
-
+    
+    let finalString="";
     let finalNumber=0;
+
     for(let i=0;i<inputCopy.length;i++){
         finalNumber*=26;
         finalNumber+=inputCopy.charCodeAt(i) - 64
+        finalString+=`Step ${i+1}: ${finalNumber} \n`;
     }
     
     return finalNumber;
