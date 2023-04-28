@@ -18,7 +18,7 @@ export default function ConvertStringToNumber(inputString) {
     return finalNumber;
 }
 
-function IsAlpha(inputString) {
+export function IsAlpha(inputString) {
     for (let i = 0; i < inputString.length; i++) {
         const asciiCode = inputString.charCodeAt(i);
         if (!(asciiCode > 64 && asciiCode < 91) && !(asciiCode > 96 && asciiCode < 123)) {
