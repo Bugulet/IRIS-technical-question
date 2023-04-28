@@ -11,10 +11,12 @@ export default function ConvertNumberToString(inputNumber) {
         // first be seen as 26%26 -> 0, which will break our algorithm a bit, so we instead substract one from it to 
         // get back the index to the proper 0, after which we add 65, which is corresponding to the "A" value in the ascii table
         let currentLetter = String.fromCharCode((inputNumber - 1) % 26 + 65);
+
+        //we're adding the character at the beginning of the string
         finalString = currentLetter + finalString;
+
+        //then we cut down one "letter" from the number
         inputNumber = Math.floor((inputNumber - 1) / 26);
     }
     return finalString;
 }
-
-ConvertNumberToString(27);

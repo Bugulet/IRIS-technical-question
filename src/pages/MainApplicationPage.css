@@ -1,19 +1,16 @@
-.title{
-
-}
-
-.header-menu{
+.header-menu {
     max-width: 500px;
     margin: auto;
 }
 
-.function-content{
+.function-content {
     margin-top: 30px;
 }
 
-.content{
+.content {
     padding-top: 3rem;
 }
-.button{
+
+.button {
     margin-top: 1rem;
 }

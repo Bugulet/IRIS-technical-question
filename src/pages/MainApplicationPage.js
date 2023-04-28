@@ -29,6 +29,7 @@ export default function MainApplicationPage() {
         <div className="content card grid">
             <div className="col" />
             <div className="col" >
+                {/* using this is less overkill than routing */}
                 {firstComponentActive ? <StringToNumberComponent /> : <NumberToStringComponent />}
             </div>
             <div className="col" />
