@@ -16,4 +16,10 @@ test("can only accept positive numbers",()=>{
 
 test("can transform one number to proper value",()=>{
     expect(ConvertNumberToString(1)).toBe("A");
+    expect(ConvertNumberToString(26)).toBe("Z");
+})
+
+test("can transform bigger number to proper value",()=>{
+    expect(ConvertNumberToString(27)).toBe("AA");
+    expect(ConvertNumberToString(705)).toBe("AAC");
 })
