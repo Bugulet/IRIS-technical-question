@@ -11,3 +11,11 @@ test("only accepts strings",()=>{
 test("can transform one letter to proper value",()=>{
     expect(ConvertStringToNumber("A")).toBe(1);
 })
+
+test("can accept lowercase letters",()=>{
+    expect(ConvertStringToNumber("a")).toBe(1);
+})
+
+test("can only accept alpha characters",()=>{
+    expect(ConvertStringToNumber("a3wf!")).toBeNull();
+})
