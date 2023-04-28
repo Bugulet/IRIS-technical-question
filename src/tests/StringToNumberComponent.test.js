@@ -19,3 +19,9 @@ test("can accept lowercase letters",()=>{
 test("can only accept alpha characters",()=>{
     expect(ConvertStringToNumber("a3wf!")).toBeNull();
 })
+
+test("can transform multiple letters to number",()=>{
+    expect(ConvertStringToNumber("AA")).toBe(27);
+    expect(ConvertStringToNumber("AB")).toBe(28);
+    expect(ConvertStringToNumber("AAC")).toBe(705);
+})

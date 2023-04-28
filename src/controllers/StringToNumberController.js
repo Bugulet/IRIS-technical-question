@@ -5,8 +5,14 @@ export default function ConvertStringToNumber(inputString) {
         return null;
     }
     let inputCopy = inputString.toUpperCase();
+
+    let finalNumber=0;
+    for(let i=0;i<inputCopy.length;i++){
+        finalNumber*=26;
+        finalNumber+=inputCopy.charCodeAt(i) - 64
+    }
     
-    return inputCopy.charCodeAt(0) - 64;
+    return finalNumber;
 }
 
 function IsAlpha(inputString) {
